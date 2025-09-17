@@ -1,1 +1,15 @@
-
+{
+  "name": "Ultimate Cat Clicker",
+  "short_name": "UCC",
+  "start_url": "https://catsdevs.online/Ultimate-Cat-Clicker/UCC/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff99cc",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/justdev-chris/P2E/refs/heads/main/app.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
