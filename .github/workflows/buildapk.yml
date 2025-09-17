@@ -1,1 +1,40 @@
+name: Build PWA to APK
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install pwa2apk CLI
+        run: npm install -g pwa2apk
+
+      - name: Build APK
+        run: |
+          pwa2apk build \
+          --name "Ultimate Cat Clicker" \
+          --short_name "UCC" \
+          --start_url "https://catsdevs.online/Ultimate-Cat-Clicker/UCC/" \
+          --icon "https://raw.githubusercontent.com/justdev-chris/P2E/refs/heads/main/app.ico" \
+          --background_color "#ffffff" \
+          --theme_color "#ff99cc" \
+          --output "build/UCC.apk"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: UCC-APK
+          path: build/UCC.apk
