@@ -24,7 +24,7 @@ jobs:
 
       - name: Build APK
         run: |
-         npx @pwabuilder/cli https://catsdevs.online/Ultimate-Cat-Clicker/UCC/ \
+         pwa build https://catsdevs.online/Ultimate-Cat-Clicker/UCC/ \
             --output ./build \
             --icon https://raw.githubusercontent.com/justdev-chris/P2E/refs/heads/main/app.ico
 
